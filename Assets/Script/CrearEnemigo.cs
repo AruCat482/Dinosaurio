@@ -15,6 +15,11 @@ public class CrearEnemigo : MonoBehaviour
         posicionMinima = camara.ViewportToWorldPoint(new Vector2(0, 0));
         posicionInicial = camara.ViewportToWorldPoint(new Vector2(1, 1));
 
+        
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(CrearEnemigo1());
     }
 
@@ -28,7 +33,7 @@ public class CrearEnemigo : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2, 5));
+            yield return new WaitForSeconds(4);
             GameObject enemigoNuevo = Instantiate(enemigo);
             //enemigoNuevo.transform.position = CalcularPosicionAleatoria();
         }

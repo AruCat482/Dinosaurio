@@ -7,6 +7,10 @@ public class MovimientoPersonaje : MonoBehaviour
     [SerializeField] Rigidbody2D rigidbody2D;
     [SerializeField] Animator animator;
     [SerializeField] float altura;
+    [SerializeField] GameManager gameManager;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,8 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             animator.SetBool("Animacion", true);
             rigidbody2D.AddForce(Vector2.up*altura);
+            audioSource.clip = audioClip[0];
+            audioSource.Play();
         }
     }
 
@@ -32,7 +38,8 @@ public class MovimientoPersonaje : MonoBehaviour
         }
         if (collision.transform.tag == "Enemigo")
         {
-            GameManager.Instancia.Perder();
+            gameManager.Perder();
+            Debug.Log("Me choque");
         }
     }
 }

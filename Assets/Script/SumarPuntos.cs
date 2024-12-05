@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SumarPuntos : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager.Instancia.ActualizarPuntuacion();
+        gameManager.ActualizarPuntuacion();
+        Debug.Log("Puntito que me llevo!!");
     }
 }
