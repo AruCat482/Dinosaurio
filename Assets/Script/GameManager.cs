@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject textoGO, boton;
-    [SerializeField] GameObject personaje, enemigo;
+    [SerializeField] GameObject personaje, enemigo, enemigo2;
     [SerializeField] bool reloj;
     [SerializeField] public float tiempo;
     [SerializeField] TMP_Text textoTiempo;
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         personaje.SetActive(false);
         enemigo.SetActive(false);
+        enemigo2.SetActive(false);
         textoGO.SetActive(true);
         boton.SetActive(true);
         reloj = false;
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Otra vez...");
         personaje.SetActive(true);
         enemigo.SetActive(true);
+        enemigo2.SetActive(true);
         textoGO.SetActive(false);
         boton.SetActive(false);
         reloj = true;

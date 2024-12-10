@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class CrearEnemigo : MonoBehaviour
+public class CrearEnemigo2 : MonoBehaviour
 {
     [SerializeField] GameObject enemigo;
     [SerializeField] Camera camara;
@@ -16,7 +16,7 @@ public class CrearEnemigo : MonoBehaviour
         posicionMinima = camara.ViewportToWorldPoint(new Vector2(0, 0));
         posicionInicial = camara.ViewportToWorldPoint(new Vector2(1, 1));
 
-        
+
     }
 
     private void OnEnable()
@@ -27,15 +27,15 @@ public class CrearEnemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator CrearEnemigo1()
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(3,8));
-            //yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(Random.Range(2,6));
+            //yield return new WaitForSeconds(4);
             GameObject enemigoNuevo = Instantiate(enemigo);
             //enemigoNuevo.transform.position = CalcularPosicionAleatoria();
         }
