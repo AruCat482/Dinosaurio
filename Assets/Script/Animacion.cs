@@ -14,13 +14,13 @@ public class Animacion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Jump"))
         {
             animator.SetBool("Animacion", true);
         }
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetKeyDown (KeyCode.DownArrow))
         {
-            animator.SetBool("Animacion", false);
+            animator.SetTrigger("Animacion2");
         }
     }
 }

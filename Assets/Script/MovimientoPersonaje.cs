@@ -28,6 +28,12 @@ public class MovimientoPersonaje : MonoBehaviour
             audioSource.clip = audioClip[0];
             audioSource.Play();
         }
+        if (Input.GetKeyDown (KeyCode.DownArrow) || Input.GetButtonDown("Fire1"))
+        {
+            animator.SetBool("Animacion", false);
+            audioSource.clip = audioClip[0];
+            audioSource.Play();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
